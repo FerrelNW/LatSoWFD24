@@ -16,7 +16,7 @@ class MovieController extends Controller
     public function showTickets(Movie $movie)
     {
         $tickets = $movie->tickets; // Ambil tiket terkait film menggunakan relasi Eloquent
-        return view('movies.list', compact('movie', 'tickets'));
+        return view('tickets.list', compact('movie', 'tickets'));
     }
 
     public function book(Movie $movie)

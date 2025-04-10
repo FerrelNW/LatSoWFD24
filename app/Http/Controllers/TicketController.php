@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class TicketController extends Controller
 {
-    public function store(Request $request)
+    public function submit(Request $request)
     {
         $request->validate([
             'movie_id' => 'required|exists:movies,id',

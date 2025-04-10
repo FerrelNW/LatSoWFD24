@@ -12,11 +12,11 @@
     {{-- info Movie --}}
         <div class="mb-6 text-sm text-gray-700" >
             <p><strong>Movie Title:</strong>{{ $movie->movie_title}}</p>
-            <p><strong>Release Date:</strong>{{ $movie->release_date}}</p>
-            <p><strong>Duration:</strong>{{ $movie->duration}}</p>
+            <p><strong>Release Date:</strong> {{ \Carbon\Carbon::parse($movie->release_date)->format('d F Y') }}</p>
+            <p><strong>Duration:</strong> {{ $movie->duration }} menit</p>
         </div>
     {{-- Form Booking --}}
-    <form method="POST" action="{{ route(tickets.submit) }}" class="space-y-4">
+    <form method="POST" action="{{ route('ticket.submit') }}" class="space-y-4">
         @csrf
 
         {{-- Hidden Movie ID --}}
@@ -39,8 +39,8 @@
         </div>
 
         <div class="flex justify-between items-center mt-4">
-            <a href="{{ movies.index }}" class="text-gray-600 test-sm"></a>
-            <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">Booking Ticket</button>
+            <a href="/" class="text-gray-600 text-sm">Back to Movies List</a>
+            <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition duration-300">Booking Ticket</button>
         </div>
         </form>
 </div>
