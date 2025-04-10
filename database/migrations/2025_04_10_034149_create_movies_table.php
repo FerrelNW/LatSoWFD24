@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->string('movie_title',100);
             $table->integer('duration');
-            $table->datetime('release_date');
+            $table->date('release_date');
             $table->timestamps();
         });
     }

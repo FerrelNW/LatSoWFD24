@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
         ]);
         $this->call([ //kyk daftarin seeder di dtbase seeder
             MovieSeeder::class,
-            //yang diubah”
             // tambahkan seeder lain di sini kalau ada
         ]);
 

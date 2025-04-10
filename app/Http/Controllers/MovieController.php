@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+
 use App\Models\Movie;
+use Illuminate\Http\Request;
 
 class MovieController extends Controller
 {
@@ -10,5 +11,16 @@ class MovieController extends Controller
     {
         $movies = Movie::all();
         return view('movies.index', compact('movies'));
+    }
+
+    public function showTickets(Movie $movie)
+    {
+        $tickets = $movie->tickets; // Ambil tiket terkait film menggunakan relasi Eloquent
+        return view('movies.list', compact('movie', 'tickets'));
+    }
+
+    public function book(Movie $movie)
+    {
+        return view('movies.book', compact('movie'));
     }
 }
